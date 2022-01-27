@@ -28,4 +28,8 @@ public final class Constants {
         public static final int TRIGGER_AXIS = 3; //negative values are right and positive values are left
         public static final int X_RJOY_ID = 4;
     }
+    public static final class ClimberConstants{
+        public static final int LEFT_MOTOR = 5;
+        public static final int RIGHT_MOTOR = 6;
+    }
 }
