@@ -7,7 +7,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants.DriverControllerConstants;
+import frc.robot.commands.ClimberCommand;
 import frc.robot.commands.DriveCommand;
+import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 
@@ -20,12 +22,13 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   private final Drivetrain m_driveTrain = new Drivetrain();
   private LogitechController driverController = new LogitechController(DriverControllerConstants.XBOX_ID);
-  
+  private LogitechController operatorController = new LogitechController(DriverControllerConstants.OPERATOR_CONTROLLER);
+  private Climber m_climber = new Climber();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     m_driveTrain.setDefaultCommand(new DriveCommand(m_driveTrain, driverController));
-  
+    m_climber.setDefaultCommand(new ClimberCommand(m_climber,operatorController));
     // Configure the button bindings
     configureButtonBindings();
   }
