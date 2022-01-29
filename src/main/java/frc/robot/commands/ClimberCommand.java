@@ -6,7 +6,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
 import frc.robot.LogitechController;
 import frc.robot.Constants.DriverControllerConstants;
 import frc.robot.subsystems.Climber;
